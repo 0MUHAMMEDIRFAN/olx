@@ -1,41 +1,47 @@
-import React from 'react';
+import React from 'react'
+import { useHistory } from 'react-router-dom'
+import "./Login.css"
 
-import Logo from '../../olx-logo.png';
-import './Login.css';
-
-function Login() {
-  return (
-    <div>
-      <div className="loginParentDiv">
-        <img width="200px" height="200px" src={Logo}></img>
-        <form>
-          <label htmlFor="fname">Email</label>
-          <br />
-          <input
-            className="input"
-            type="email"
-            id="fname"
-            name="email"
-            defaultValue="John"
-          />
-          <br />
-          <label htmlFor="lname">Password</label>
-          <br />
-          <input
-            className="input"
-            type="password"
-            id="lname"
-            name="password"
-            defaultValue="Doe"
-          />
-          <br />
-          <br />
-          <button>Login</button>
-        </form>
-        <a>Signup</a>
-      </div>
-    </div>
-  );
+function Signin() {
+    const history = useHistory();
+    return (
+        <div className='signinContainer' >
+            <div className="click"
+                onClick={() => {
+                    history.push("/");
+                }}
+            ></div>
+            <div className='mainDiv'>
+                <div className="banner">
+                    <div className="close" onClick={() => {
+                        history.push("/")
+                    }}><div></div></div>
+                    <div className="contents">
+                        <img src="../../Images/loginEntryPointChat.webp" alt="" />
+                    </div>
+                    <div className="contents">
+                        <img src="../../Images/loginEntryPointFavorite.webp" alt="" />
+                    </div>
+                    <div className="contents">
+                        <img src="../../Images/loginEntryPointPost.webp" alt="" />
+                    </div>
+                </div>
+                <div className="buttons">
+                    <input type="button" value="Continue with Google" />
+                    <input type="button" value="Continue with Phone" />
+                    <span>OR</span>
+                    <span>Login with Email</span>
+                </div>
+                <div className="footer">
+                    <p>All your personal details are safe with us.
+                    </p>
+                    <span>
+                        If you continue, you are accepting OLX Terms and <br /> Conditions and Privacy Policy
+                    </span>
+                </div>
+            </div>
+        </div>
+    )
 }
 
-export default Login;
+export default Signin

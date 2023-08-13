@@ -1,38 +1,118 @@
-.loginParentDiv {
-    border: 1px solid black;
-    width: max-content;
-    padding: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 6px;
-  }
-  
-  .loginParentDiv .input {
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    outline-color: transparent;
-  }
-  
-  .loginParentDiv button {
+.signinContainer {
     width: 100%;
-    height: 48px;
-    /* border-color: transparent; */
-    background-color: #002f34;
-    color: whitesmoke;
-    font-weight: 900;
-  }
-  .loginParentDiv button:hover {
-    background-color: white;
-    color: #002f34;
-    border: 2px solid #002f34;
-  }
-  
-  .loginParentDiv a {
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signinContainer .mainDiv .close div::after {
+    content: " ";
+    transform: rotate(90deg);
+    width: 20px;
+    height: 2px;
+    background: #000;
+    position: absolute;
+
+}
+
+.signinContainer .mainDiv .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    margin: 5px;
     display: flex;
     justify-content: center;
-    cursor: pointer;
-  }
-  
+    align-items: center;
+    height: 25px;
+    width: 25px;
+
+}
+
+.signinContainer .mainDiv .close div {
+    width: 20px;
+    height: 2px;
+    background: #000;
+    rotate: 45deg;
+}
+
+.signinContainer .mainDiv {
+    position: relative;
+    height: 600px;
+    width: 400px;
+    /* border-radius: 20px; */
+    background: white;
+}
+
+.signinContainer .mainDiv .banner::-webkit-scrollbar {
+    display: none;
+}
+
+.signinContainer .mainDiv .banner {
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    height: 220px;
+}
+
+.signinContainer .mainDiv .banner .contents {
+    scroll-snap-align: center;
+    /* height: 220px; */
+    display: flex;
+    width: 100%;
+    /* align-content: space-around; */
+    justify-content: center;
+}
+
+.signinContainer .mainDiv .banner .contents img {
+    height: 100px;
+    width: 100px;
+    margin-inline: 140px;
+}
+
+.signinContainer .mainDiv .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signinContainer .mainDiv .buttons input:hover {
+    outline: 2px solid black;
+}
+
+.signinContainer .mainDiv .buttons input {
+    font-size: large;
+    width: 95%;
+    margin-block: 10px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-weight: 600;
+    background: #fff;
+}
+
+.signinContainer .mainDiv .buttons span {
+    font-weight: 700;
+}
+
+.signinContainer .mainDiv .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.click{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
